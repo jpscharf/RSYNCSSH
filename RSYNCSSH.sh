@@ -8,6 +8,7 @@
 
 # Setup script variables
 APP_VERSION="2.0.0-b4"
+APP_BUILD="35"
 APP_NAME="RSYNCSSH"
 APP_DATE="2012AUG21"
 
@@ -27,7 +28,7 @@ do
 
 		--version)
 			# version
-			echo "$APP_NAME v$APP_VERSION ($APP_DATE)"
+			echo "$APP_NAME v$APP_VERSION [$APP_BUILD] ($APP_DATE)"
 			exit
 			;;
 		
