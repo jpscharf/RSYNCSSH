@@ -2,8 +2,10 @@ syncSSH
 ========
 A wrapper script for using rsync over ssh.
 
-Usage: syncSSH [-k, --keyfile keyfile] [-l, --local-path localpath]  [-q,--quiet] [-r, remote-path remotepath]  [-u,--usage] [-v,--verbose] [-v, --version]
+Usage: syncSSH [-h, --help] [-k, --keyfile keyfile] [-l, --local-path localpath]  [-q,--quiet] [-r, remote-path remotepath]  [-u,--usage] [-v,--verbose] [-v, --version]
 
+	-h, --help						Alias of usage (-u, --usage)
+	
 	-k, --keyfile keyfile			Path to the key/identity file to use for
         							authentication.
         							(default: ~/.ssh/id_rsa)
