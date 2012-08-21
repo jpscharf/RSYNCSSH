@@ -32,6 +32,12 @@ do
 			exit
 			;;
 		
+		--usage | -u)
+		    # usage
+		    echo "$APP_NAME: (--verbose|v) (--quiet|q) (--version) (--usage|u)"
+		    exit
+		    ;;
+		
 		*)
 			# unknown variable
 			if [ "$APP_PARAM_ERROR" != "" ]
