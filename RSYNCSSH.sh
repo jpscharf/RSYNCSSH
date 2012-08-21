@@ -71,7 +71,12 @@ then
 fi
 
 # Setup Keyfile
-KEYFILE="/home/jpscharf/keys/rsync-svn-serenity"
+if [ "$KEYFILE" = "" ]
+then
+    KEYFILE = "~/.ssh/id_rsa"
+fi
+
+#KEYFILE="/home/jpscharf/keys/rsync-svn-serenity"
 
 # Setup Local Path
 LOCAL_PATH="/home/jpscharf/svn_backups/"
