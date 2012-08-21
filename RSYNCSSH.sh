@@ -13,7 +13,7 @@ APP_NAME="RSYNCSSH"
 APP_DATE="2012AUG21"
 
 # Usage Information
-usage="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
+APP_USAGE="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
 
 where:
     --quiet -q      show nothing
@@ -43,7 +43,7 @@ do
 		
 		--usage | -u)
 		    # usage
-		    echo "$USAGE"
+		    echo "$APP_USAGE"
 		    exit
 		    ;;
 		
