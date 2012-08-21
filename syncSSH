@@ -3,11 +3,11 @@
 #
 # syncSSH
 # 
-# Version: 2.0.0-b5 (2012AUG21)
+# Version: 0.0.1 (2012AUG21)
 ################################################
 
 # Setup script variables
-APP_VERSION="2.0.0-b5"
+APP_VERSION="0.0.1"
 APP_BUILD="36"
 APP_NAME="syncSSH"
 APP_DATE="2012AUG21"
