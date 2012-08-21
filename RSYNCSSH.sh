@@ -3,7 +3,7 @@
 #
 # RSYNCSSH
 # 
-# Version: 2.0.0-b3 (2012AUG21)
+# Version: 2.0.0-b4 (2012AUG21)
 ################################################
 
 # Setup script variables
