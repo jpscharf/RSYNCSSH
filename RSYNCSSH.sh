@@ -19,6 +19,7 @@ do
 			# verbose
 			APP_VERBOSE=$arg 
 			;;
+			
 		-quiet | -q)
 			# quiet mode
 			APP_QUIET=">& /dev/null"
