@@ -2,7 +2,7 @@ syncSSH
 ========
 A wrapper script for using rsync over ssh.
 
-Usage: syncSSH [-h, --help] [-k, --keyfile keyfile] [-l, --local-path localpath]  [-q,--quiet] [-r, remote-path remotepath]  [-u,--usage] [-v,--verbose] [-v, --version]
+Usage: syncSSH [-h, --help] [-k, --keyfile keyfile] [-l, --local-path localpath]  [-q,--quiet] [-r, remote-path remotepath]  [-u,--usage] [-v,--verbose] [-V, --version]
 
 	-h, --help						Alias of usage (-u, --usage)
 	
@@ -29,5 +29,5 @@ Usage: syncSSH [-h, --help] [-k, --keyfile keyfile] [-l, --local-path localpath]
         							Multiple -v options increase the verbosity.
         							The maximum is 3.
         							
-	--version                   	show the version number
+	-V, --version                   Display the version number and exit.
 		
