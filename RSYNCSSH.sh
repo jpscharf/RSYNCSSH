@@ -15,9 +15,9 @@ APP_DATE="2012AUG21"
 # Usage Information
 APP_USAGE="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
 where:
-    --quiet, -q                 show nothing
-    --usage, -u                 show this screen
-    --verbose, -v               show everything
+    -q, --quiet                 show nothing
+    -v, --usage                 show this screen
+    --verbose                   show everything
     --version                   show the version number"
 
 # Process parameters
