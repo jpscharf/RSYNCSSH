@@ -15,7 +15,6 @@ APP_DESC="A wrapper script for using rsync over ssh."
 
 # Usage Information
 APP_USAGE="$(basename $0) $APP_VERSION $APP_DESC
-
 Usage: syncSSH [-k, --keyfile keyfile] [-l, --local-path localpath] [-q,--quiet] [-r, remote-path remotepath] [-u,--usage] [-v,--verbose] [-v, --version]
 
     -k, --keyfile keyfile           Path to the key file to use for
