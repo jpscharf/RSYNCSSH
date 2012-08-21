@@ -12,6 +12,15 @@ APP_BUILD="35"
 APP_NAME="RSYNCSSH"
 APP_DATE="2012AUG21"
 
+# Usage Information
+usage="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
+
+where:
+    --quiet -q      show nothing
+    --usage -u      show thsi screen
+    --verbose -v    show everything
+    --version       show the version number"
+
 # Process parameters
 for arg
 do
@@ -34,7 +43,7 @@ do
 		
 		--usage | -u)
 		    # usage
-		    echo "$APP_NAME: (--verbose|v) (--quiet|q) (--version) (--usage|u)"
+		    echo "$USAGE"
 		    exit
 		    ;;
 		
