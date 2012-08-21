@@ -73,7 +73,7 @@ fi
 # Setup Keyfile
 if [ "$KEYFILE" = "" ]
 then
-    KEYFILE = "~/.ssh/id_rsa"
+    KEYFILE="~/.ssh/id_rsa"
 fi
 
 #KEYFILE="/home/jpscharf/keys/rsync-svn-serenity"
