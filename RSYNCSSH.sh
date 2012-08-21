@@ -15,6 +15,8 @@ APP_DATE="2012AUG21"
 # Usage Information
 APP_USAGE="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
 where:
+    -k, --keyfile   NOT IMPLIM  path to the keyfile to use
+                                default: ~/.ssh/id_rsa
     -q, --quiet                 show nothing
     -v, --usage                 show this screen
     --verbose                   show everything
