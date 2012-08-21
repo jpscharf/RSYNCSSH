@@ -50,7 +50,7 @@ do
 			APP_QUIET=">& /dev/null"
 			;;
 
-		--version)
+		-V | --version)
 			# version
 			echo "$APP_NAME v$APP_VERSION [$APP_BUILD] ($APP_DATE)"
 			exit
