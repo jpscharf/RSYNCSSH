@@ -16,7 +16,7 @@ APP_DATE="2012AUG21"
 APP_USAGE="$(basename $0) $APP_VERSION [--quiet|-q] [--usage|-u] [--verbose|-v] [--version] -- use rsync over ssh
 where:
     -k, --keyfile   NOT IMPLIM  path to the keyfile to use
-                                default: ~/.ssh/id_rsa
+                                default: \$HOME/.ssh/id_rsa
     -q, --quiet                 show nothing
     -v, --usage                 show this screen
     --verbose                   show everything
@@ -73,7 +73,7 @@ fi
 # Setup Keyfile
 if [ "$KEYFILE" = "" ]
 then
-    KEYFILE="~/.ssh/id_rsa"
+    KEYFILE="$HOME/.ssh/id_rsa"
 fi
 
 #KEYFILE="/home/jpscharf/keys/rsync-svn-serenity"
