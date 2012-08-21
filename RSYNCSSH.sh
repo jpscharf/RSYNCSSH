@@ -7,7 +7,7 @@
 ################################################
 
 # Setup script variables
-APP_VERSION="2.0.0-b2"
+APP_VERSION="2.0.0-b4"
 APP_NAME="RSYNCSSH"
 APP_DATE="2012AUG21"
 
@@ -15,7 +15,7 @@ APP_DATE="2012AUG21"
 for arg
 do
 	case $arg in
-		[-]v*)
+		--verbose | [-]v*)
 			# verbose
 			APP_VERBOSE=$arg 
 			;;
