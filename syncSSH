@@ -3,12 +3,11 @@
 #
 # syncSSH
 # 
-# Version: 0.0.2 (2012AUG21)
+# Version: 0.0.3 (2012AUG21)
 ################################################
 
 # Setup script variables
-APP_VERSION="0.0.2"
-APP_BUILD="40"
+APP_VERSION="0.0.3"
 APP_NAME="syncSSH"
 APP_DATE="2012AUG21"
 APP_DESC="A wrapper script for using rsync over ssh."
@@ -66,7 +65,7 @@ do
 
 		-V | --version)
 			# version
-			echo "$APP_NAME v$APP_VERSION [$APP_BUILD] ($APP_DATE)"
+			echo "$APP_NAME v$APP_VERSION ($APP_DATE)"
 			exit
 			;;
 		
