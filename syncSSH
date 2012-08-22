@@ -124,10 +124,10 @@ then
 fi
 
 # Run rsync
-eval $RSYNC_COM $APP_QUIET
+# eval $RSYNC_COM $APP_QUIET
 
 # wrap up
-exit $?
+# exit $?
 
 #rsync -azlvvv -e $SSHCOM:/volume1/NetBackup/svn/ /home/jpscharf/svn_backups
 #rsync -azlvvv -e $SSHCOM $SSHHOST:$REMOTE_PATH $LOCAL_PATH
