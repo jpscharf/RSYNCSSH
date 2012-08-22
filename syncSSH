@@ -52,7 +52,6 @@ Usage:
 # Process parameters
 for arg
 do
-    echo $arg
 	case $arg in
 		-vv* | --verbose)
 			# verbose
