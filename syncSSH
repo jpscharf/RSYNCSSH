@@ -52,13 +52,14 @@ Usage:
 # Process parameters
 for arg
 do
+    echo $arg
 	case $arg in
-		--verbose | [-]v*)
+		-vv* | --verbose)
 			# verbose
 			APP_VERBOSE=$arg 
 			;;
 			
-		--quiet | -q)
+		-q | --quiet)
 			# quiet mode
 			APP_QUIET=">& /dev/null"
 			;;
@@ -69,12 +70,19 @@ do
 			exit
 			;;
 		
-		--usage | -u | -h | --help)
+		-u | -h | --usage | --help)
 		    # usage
 		    echo "$APP_USAGE"
 		    exit
 		    ;;
-		
+		    
+		-k | --keyfile)
+		    # keyfile
+		    shift
+		    echo "$arg"
+		    exit
+		    ;;
+		    
 		*)
 			# unknown variable
 			if [ "$APP_PARAM_ERROR" != "" ]
