@@ -12,14 +12,11 @@ A wrapper script for using rsync over ssh.
 	-k,--keyfile keyfile			Path to the key/identity file to use for
         							authentication.
         							(default: ~/.ssh/id_rsa)
-        								*NOT IMPLIMENTED*
         							
     -l,--local-path localpath		Local path, source path for syncing.
     								(default: current directory)
-    									*NOT IMPLIMENTED*
     								
 	-p,--port port					SSH port to use.
-										*NOT IMPLIMENTED*
     								
     -q,--quiet                 		Run quietly with no output.
     
