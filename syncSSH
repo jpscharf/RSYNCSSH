@@ -18,7 +18,7 @@ Usage:
     -h,--help                       Alias of usage (-u, --usage)
     
     -H,--remote-host [user@]host    IP or DNS name of the ssh remote host.
-                                        *NOT IMPLIMENTED*
+                                        *REQUIRED*
                                         
     -k,--keyfile keyfile            Path to the key file to use for
                                     authentication.
@@ -51,7 +51,15 @@ do
     case "$1" in
         -H | --remote-host)
             # remote host
-            
+            # extract host
+            SSH_HOST=`expr "$2" : "\(^[^\.\-][a-zA-Z0-9_@\.\-]*\)"`
+            if [ -z "$SSH_HOST" ]
+            then
+                APP_PARAM_ERROR="You must provide the remote host with -H."
+    	        break
+    	    else
+                shift
+    	    fi
             ;;
             
     	-k | --keyfile)
@@ -138,15 +146,6 @@ do
         shift
 done
 
-
-# Check for errors in parameters
-if [ -n "$APP_PARAM_ERROR" ]
-then
-	printf '\a'
-	echo "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
-	exit
-fi
-
 # Setup Keyfile
 if [ -z "$KEYFILE"]
 then
@@ -164,14 +163,31 @@ fi
 # Setup remote path
 REMOTE_PATH="/volume1/NetBackup/svn/"
 
-# Setup SSH Host
-SSH_HOST="jasonscharf.org"
+# Check SSH Host
+if [ -z "$SSH_HOST"]
+then
+    if [ -n "$APP_PARAM_ERROR" ]
+	then
+		APP_PARAM_ERROR="$APP_PARAM_ERROR\nRemote host is a required parameter (-H,--remote-host [user@]host)."
+	else
+		APP_PARAM_ERROR="Remote host is a required parameter (-H,--remote-host [user@]host)."
+	fi
+fi
 
 # Setup ssh command
 SSH_COM="ssh $APP_VERBOSE$SSH_PORT -oPreferredAuthentications=publickey -i $KEYFILE"
 
 # Setup rsync command
 RSYNC_COM="rsync -azl $APP_VERBOSE -e \"$SSH_COM\" $SSH_HOST:$REMOTE_PATH $LOCAL_PATH"
+
+# Check for errors in parameters
+if [ -n "$APP_PARAM_ERROR" ]
+then
+	printf '\a'
+	echo "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
+	echo "For help, please try, $(basename $0) -u."
+	exit
+fi
 
 if [ "$APP_QUIET" = "" ]
 then

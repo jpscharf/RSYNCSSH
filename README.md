@@ -7,8 +7,8 @@ A wrapper script for using rsync over ssh.
 	-h,--help						Alias of usage (-u, --usage)
 
 	-H,--remote-host [user@]host	IP or DNS name of the ssh remote host.	
-										*NOT IMPLIMENTED*
-									
+										*REQUIRED*
+										
 	-k,--keyfile keyfile			Path to the key/identity file to use for
         							authentication.
         							(default: ~/.ssh/id_rsa)
