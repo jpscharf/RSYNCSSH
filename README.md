@@ -22,7 +22,7 @@ A wrapper script for using rsync over ssh.
     
     -r,--remote-path remotepath		Remote path, destination path on
     								remote host for syncing.
-    									*NOT IMPLIMENTED*
+    									*REQUIRED*
     								
     -u,--usage                 		Display the help/usage information.
     

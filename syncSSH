@@ -3,11 +3,11 @@
 #
 # syncSSH
 # 
-# Version: 0.0.5 (2012AUG22)
+# Version: 0.0.6 (2012AUG22)
 ################################################
 
 # Setup script variables
-APP_VERSION="0.0.5"
+APP_VERSION="0.0.6"
 APP_NAME="syncSSH"
 APP_DATE="2012AUG22"
 APP_DESC="A wrapper script for using rsync over ssh."
@@ -33,7 +33,7 @@ Usage:
     
     -r,--remote-path remotepath     Remote path, destination path on
                                     remote host for syncing.
-                                        *NOT IMPLIMENTED*
+                                        *REQUIRED*
                                         
     -u,--usage                      Display the help/usage information.
     
@@ -55,7 +55,6 @@ do
             SSH_HOST=`expr "$2" : "\(^[^\.\-][a-zA-Z0-9_@\.\-]*\)"`
             if [ -z "$SSH_HOST" ]
             then
-                APP_PARAM_ERROR="You must provide the remote host with -H."
     	        break
     	    else
                 shift
@@ -112,9 +111,15 @@ do
     	
     	-r | --remote-path)
             # remote path
-        
+            if [ -z "$2" ]
+            then
+                break
+            else
+                REMOTE_PATH="$2"
+                shift
+            fi
             ;;
-    
+            
     	-u | -h | --usage | --help)
             # usage
             echo "$APP_USAGE"
@@ -161,10 +166,18 @@ then
 fi
 
 # Setup remote path
-REMOTE_PATH="/volume1/NetBackup/svn/"
+if [ -z "$REMOTE_PATH" ]
+then
+    if [ -n "$APP_PARAM_ERROR" ]
+	then
+		APP_PARAM_ERROR="$APP_PARAM_ERROR\nRemote path is a required parameter (-r,--remote-path remotepath)."
+	else
+		APP_PARAM_ERROR="Remote path is a required parameter (-r,--remote-path remotepath)."
+	fi
+fi
 
 # Check SSH Host
-if [ -z "$SSH_HOST"]
+if [ -z "$SSH_HOST" ]
 then
     if [ -n "$APP_PARAM_ERROR" ]
 	then
