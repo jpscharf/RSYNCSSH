@@ -249,7 +249,7 @@ if [ -n "$APP_PARAM_ERROR" ]
 then
 	printf '\a'
 	printf "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
-	echo "\nFor help, please try, $(basename $0) -u."
+	printf "\nFor help, please try, $(basename $0) -u. "
 	exit
 fi
 
