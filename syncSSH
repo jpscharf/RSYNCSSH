@@ -3,37 +3,51 @@
 #
 # syncSSH
 # 
-# Version: 0.0.1 (2012AUG21)
+# Version: 0.0.2 (2012AUG21)
 ################################################
 
 # Setup script variables
-APP_VERSION="0.0.1"
-APP_BUILD="36"
+APP_VERSION="0.0.2"
+APP_BUILD="40"
 APP_NAME="syncSSH"
 APP_DATE="2012AUG21"
 APP_DESC="A wrapper script for using rsync over ssh."
 
 # Usage Information
 APP_USAGE="$(basename $0) $APP_VERSION $APP_DESC
-Usage: syncSSH [-k,--keyfile keyfile] [-l,--local-path localpath] [-q,--quiet] [-r,remote-path remotepath] [-u,--usage] [-v,--verbose] [-V,--version]
+Usage: syncSSH [-h,--help] [-H,--remote-host [user@]host] [-k,--keyfile keyfile] [-l,--local-path localpath] [-p,--port port] [-q,--quiet] [-r,remote-path remotepath] [-u,--usage] [-v,--verbose] [-V,--version]
     -h,--help                       Alias of usage (-u, --usage)
+    
+    -H,--remote-host [user@]host    IP or DNS name of the ssh remote host.
+                                        *NOT IMPLIMENTED*
+                                        
     -k,--keyfile keyfile            Path to the key file to use for
                                     authentication.
                                     (default: $HOME/.ssh/id_rsa)
                                         *NOT IMPLIMENTED*
+                                        
     -l,--local-path localpath       Local path, source path for syncing.
+                                    (default: current directory)
                                         *NOT IMPLIMENTED*
+                                        
+    -p,--port port                  SSH port to use.
+                                        *NOT IMPLIMENTED*
+                                        
     -q,--quiet                      Run quietly with no output.
+    
     -r,--remote-path remotepath     Remote path, destination path on
                                     remote host for syncing.
                                         *NOT IMPLIMENTED*
+                                        
     -u,--usage                      Display the help/usage information.
+    
     -v,--verbose                    Verbose mode.  Causes script to print
                                     debugging messages about its progress.
                                     This is helpful in debugging connection,
                                     authentication, and configuration problems.
                                     Multiple -v options increase the verbosity.
                                     The maximum is 3.
+                                    
     -V,--version                    Display the version number and exit."
 
 # Process parameters

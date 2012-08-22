@@ -2,23 +2,30 @@ syncSSH
 ========
 A wrapper script for using rsync over ssh.
 
-Usage: syncSSH [-h,--help] [-k,--keyfile keyfile] [-l,--local-path localpath]  [-q,--quiet] [-r,remote-path remotepath]  [-u,--usage] [-v,--verbose] [-V,--version]
+Usage: syncSSH [-h,--help] [-H, --remote-host [user@]host] [-k,--keyfile keyfile] [-l,--local-path localpath]  [-q,--quiet] [-r,remote-path remotepath]  [-u,--usage] [-v,--verbose] [-V,--version]
 
 	-h,--help						Alias of usage (-u, --usage)
-	
+
+	-H,--remote-host [user@]host	IP or DNS name of the ssh remote host.	
+										*NOT IMPLIMENTED*
+									
 	-k,--keyfile keyfile			Path to the key/identity file to use for
         							authentication.
         							(default: ~/.ssh/id_rsa)
-        							*NOT IMPLIMENTED*
+        								*NOT IMPLIMENTED*
         							
     -l,--local-path localpath		Local path, source path for syncing.
-    								*NOT IMPLIMENTED*
+    								(default: current directory)
+    									*NOT IMPLIMENTED*
+    								
+	-p,--port port					SSH port to use.
+										*NOT IMPLIMENTED*
     								
     -q,--quiet                 		Run quietly with no output.
     
     -r,--remote-path remotepath		Remote path, destination path on
     								remote host for syncing.
-    								*NOT IMPLIMENTED*
+    									*NOT IMPLIMENTED*
     								
     -u,--usage                 		Display the help/usage information.
     
