@@ -3,13 +3,13 @@
 #
 # syncSSH
 # 
-# Version: 0.0.3 (2012AUG21)
+# Version: 0.0.4 (2012AUG22)
 ################################################
 
 # Setup script variables
-APP_VERSION="0.0.3"
+APP_VERSION="0.0.4"
 APP_NAME="syncSSH"
-APP_DATE="2012AUG21"
+APP_DATE="2012AUG22"
 APP_DESC="A wrapper script for using rsync over ssh."
 
 # Usage Information
@@ -84,7 +84,7 @@ do
 		    
 		*)
 			# unknown variable
-			if [ "$APP_PARAM_ERROR" != "" ]
+			if [ -n "$APP_PARAM_ERROR" ]
 			then
 				APP_PARAM_ERROR="$APP_PARAM_ERROR, $arg"
 			else
@@ -97,10 +97,10 @@ do
 done
 
 # Check for errors in parameters
-if [ "$APP_PARAM_ERROR" != "" ]
+if [ -n "$APP_PARAM_ERROR" ]
 then
 	printf '\a'
-	echo -e "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
+	echo "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
 	exit
 fi
 
