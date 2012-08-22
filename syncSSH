@@ -159,7 +159,7 @@ do
             
     	-u | -h | --usage | --help)
             # usage
-            echo "$APP_USAGE"
+            printf "$APP_USAGE"
             exit
             ;;
         
@@ -170,7 +170,7 @@ do
     		
     	-V | --version)
     		# version
-    		echo "$APP_NAME v$APP_VERSION ($APP_DATE)"
+    		printf "$APP_NAME v$APP_VERSION ($APP_DATE)"
     		exit
     		;;
 
@@ -248,34 +248,34 @@ RSYNC_COM="rsync -azl $APP_VERBOSE -e \"$SSH_COM\" \"$LOCAL_PATH\" $SSH_HOST:\"$
 if [ -n "$APP_PARAM_ERROR" ]
 then
 	printf '\a'
-	echo "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
-	echo "For help, please try, $(basename $0) -u."
+	printf "$APP_NAME ($APP_VERSION): ABORTED\n$APP_PARAM_ERROR"
+	echo "\nFor help, please try, $(basename $0) -u."
 	exit
 fi
 
 if [ -z "$APP_QUIET" ]
 then
 
-	echo "################################################"
-	echo $APP_VERSION $APP_NAME
-	echo "################################################"
+	printf "################################################"
+	printf $APP_VERSION $APP_NAME
+	printf "################################################"
     
     if [ -n "$KEYFILE" ]
     then
-	    echo "Keyfile Setup:\n $KEYFILE"
+	    printf "Keyfile Setup:\n $KEYFILE"
 	fi
-	echo "Local path configured:\n $LOCAL_PATH"
+	printf "Local path configured:\n $LOCAL_PATH"
 	if [ -n "$LOG_FILE" ]
     then
-	    echo "Logfile:\n $LOG_FILE"
+	    printf "Logfile:\n $LOG_FILE"
 	fi
-	echo "Remote path configure:\n $REMOTE_PATH"
-	echo "SSH host configured:\n $SSH_HOST"
-	echo "SSH command generated:\n $SSH_COM"
-	echo "rsync command generated:\n [$RSYNC_COM]"
-	echo "Running...."
+	printf "Remote path configure:\n $REMOTE_PATH"
+	printf "SSH host configured:\n $SSH_HOST"
+	printf "SSH command generated:\n $SSH_COM"
+	printf "rsync command generated:\n [$RSYNC_COM]"
+	printf "Running...."
 fi
 
 # Run rsync
-# echo "$RSYNC_COM $APP_QUIET$LOG_FILE_COM"
+# printf "$RSYNC_COM $APP_QUIET$LOG_FILE_COM"
 eval "$RSYNC_COM $APP_QUIET$LOG_FILE_COM"
