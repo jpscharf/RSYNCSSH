@@ -262,18 +262,18 @@ then
     
     if [ -n "$KEYFILE" ]
     then
-	    printf "Keyfile Setup:\n $KEYFILE"
+	    printf "Keyfile Setup:\n $KEYFILE\n"
 	fi
-	printf "Local path configured:\n $LOCAL_PATH"
+	printf "Local path configured:\n $LOCAL_PATH\n"
 	if [ -n "$LOG_FILE" ]
     then
-	    printf "Logfile:\n $LOG_FILE"
+	    printf "Logfile:\n $LOG_FILE\n"
 	fi
-	printf "Remote path configure:\n $REMOTE_PATH"
-	printf "SSH host configured:\n $SSH_HOST"
-	printf "SSH command generated:\n $SSH_COM"
-	printf "rsync command generated:\n [$RSYNC_COM]"
-	printf "Running...."
+	printf "Remote path configure:\n $REMOTE_PATH\n"
+	printf "SSH host configured:\n $SSH_HOST\n"
+	printf "SSH command generated:\n $SSH_COM\n"
+	printf "rsync command generated:\n [$RSYNC_COM]\n"
+	printf "Running....\n"
 fi
 
 # Run rsync
