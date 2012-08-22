@@ -1,8 +1,8 @@
-syncSSH
-========
+##syncSSH##
+===========
 A wrapper script for using rsync over ssh.
 
-Usage: syncSSH [-h,--help] [-H, --remote-host [user@]host] [-k,--keyfile keyfile] [-l,--local-path localpath]  [-q,--quiet] [-r,remote-path remotepath]  [-u,--usage] [-v,--verbose] [-V,--version]
+	Usage
 
 	-h,--help						Alias of usage (-u, --usage)
 
