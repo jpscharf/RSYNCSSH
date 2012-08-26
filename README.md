@@ -1,5 +1,13 @@
 ##syncSSH##
 ===========
+
+###Roadmap###
+* Add ability to create and use a config file
+* Add ability to update itself from the repository
+* Create an install scrip that will download the latest version, create keys, copy keys to remote server, create a config file, and add a cron task.
+
+###Usage###
+
 A wrapper script for using rsync over ssh.
 
 	Usage
