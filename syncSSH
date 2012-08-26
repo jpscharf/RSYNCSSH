@@ -3,13 +3,13 @@
 #
 # syncSSH
 # 
-# Version: 0.0.6 (2012AUG22)
+# Version: 0.0.6.1 (2012AUG26)
 ################################################
 
 # Setup script variables
-APP_VERSION="0.0.6"
+APP_VERSION="0.0.6.1"
 APP_NAME="syncSSH"
-APP_DATE="2012AUG22"
+APP_DATE="2012AUG26"
 APP_DESC="A wrapper script for using rsync over ssh."
 
 # Usage Information
@@ -47,7 +47,7 @@ Usage:
                                     Multiple -v options increase the verbosity.
                                     The maximum is 3.
                                     
-    -V,--version                    Display the version number and exit."
+    -V,--version                    Display the version number and exit.\n"
 
 while [ $# -gt 0 ]
 do
